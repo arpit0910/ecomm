@@ -7,10 +7,10 @@ $(function() {
 	}), $(".mobile-toggle-menu").on("click", function() {
 		$(".wrapper").addClass("toggled")
 	}), $(".toggle-icon").click(function() {
-		$(".wrapper").hasClass("toggled") ? ($(".wrapper").removeClass("toggled"), $("").unbind("hover")) : ($(".wrapper").addClass("toggled"), $("").hover(function() {
-			$(".wrapper").addClass("")
+		$(".wrapper").hasClass("toggled") ? ($(".wrapper").removeClass("toggled"), $(".sidebar-wrapper").unbind("hover")) : ($(".wrapper").addClass("toggled"), $(".sidebar-wrapper").hover(function() {
+			$(".wrapper").addClass("sidebar-hovered")
 		}, function() {
-			$(".wrapper").removeClass("")
+			$(".wrapper").removeClass("sidebar-hovered")
 		}))
 	}), $(document).ready(function() {
 		$(window).on("scroll", function() {
@@ -26,10 +26,8 @@ $(function() {
 			$(window).on("scroll", function () {
 				if ($(this).scrollTop() > 60) {
 					$('.topbar').addClass('bg-dark');
-					$('.nav-container').addClass('bg-dark');
 				} else {
 					$('.topbar').removeClass('bg-dark');
-					$('.nav-container').removeClass('bg-dark');
 				}
 			});
 			$('.back-to-top').on("click", function () {
@@ -44,7 +42,7 @@ $(function() {
 	$(function() {
 		for (var e = window.location, o = $(".metismenu li a").filter(function() {
 				return this.href == e
-			}).addClass("").parent().addClass(""); o.is("li");) o = o.parent("").addClass("").parent("").addClass("")
+			}).addClass("").parent().addClass("mm-active"); o.is("li");) o = o.parent("").addClass("mm-show").parent("").addClass("mm-active")
 	}), $(function() {
 		$("#menu").metisMenu()
 	}), $(".chat-toggle-btn").on("click", function() {
