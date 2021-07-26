@@ -24,37 +24,28 @@
     <title>Dashtreme - Multipurpose Bootstrap5 Admin Template</title>
 </head>
 
-<body class="bg-theme bg-theme1">
+<body class="bg-theme bg-theme3">
     <!--wrapper-->
     <div class="wrapper">
-        <!-- Navbar -->
         @include('layouts.partials.header')
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
         @include('layouts.partials.navigation')
-        <!-- /.Main Sidebar Container -->
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid mx-2">
-                    @yield('page-header')
-                </div><!-- /.container-fluid -->
+        <div class="page-wrapper">
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-12">
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                        @yield('page-header')
+                    </div>
+                        <div class="card">
+                            <div class="card-body">
+                                @yield('content')
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.content-header -->
-
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid mx-2">
-                    @yield('content')
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
+        @include('layouts.partials.footer')
     </div>
-    </div>
-    @include('layouts.partials.footer')
 </body>
